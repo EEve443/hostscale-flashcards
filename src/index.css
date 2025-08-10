@@ -1,6 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-/* Optionnel : petites améliorations */
-html, body, #root { height: 100%; }
+/* Container général */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+/* Animation de rotation */
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Styles de la carte */
+div[style*="preserve-3d"] {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+div[style*="preserve-3d"] > * {
+  backface-visibility: hidden;
+}
